@@ -1,0 +1,49 @@
+@import "../globals";
+
+.Quote {
+    width: 550px;
+    box-sizing: border-box;
+    padding: $contentPadding;
+    background-color: $light;
+    color: $dark;
+    border-radius: $radiusM;
+    box-shadow: $shadowLarge;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.QuoteContent {
+    display: flex;
+    column-gap: 0.5rem;
+
+    p {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .QuoteMark {
+        display: block;
+        width: fit-content;
+        font-size: 3rem;
+    }
+
+    .QuoteMark:nth-last-child(1) {
+        height: fit-content;
+        margin-top: auto;
+        transform: rotate(180deg);
+    }
+    margin-bottom: 1rem;
+}
+
+.QuoteAuthor {
+    margin-bottom: 2rem;
+    color: $offDark;
+    font-style: italic;
+}
+
+.QuoteButtons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
