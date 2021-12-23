@@ -1,24 +1,40 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import Button from "./Quote/Button";
 import TwitterIcon from "./icons/TwitterIcon";
+import { QuoteContext } from "../contexts/QuoteContext";
+import { fadeIn } from "../utils/animations";
 import styles from "../styles/components/Quote.module.scss";
 
 const Quote = () => {
+    const { quote } = useContext(QuoteContext);
+
+    const animations = fadeIn;
+
     return (
         <main id="quote-box" className={styles.Quote}>
-            <div className={styles.QuoteContent}>
-                <span className={styles.QuoteMark}>"</span>
-                <p id="text">
-                    Certain things catch your eye, but pursue only those that
-                    capture the heart.
-                </p>
-                <span className={styles.QuoteMark}>"</span>
-            </div>
-            <div className={styles.QuoteAuthor}>
-                <span id="author" className={styles.QuoteAuthorName}>
-                    Ancient Indian Proverb
-                </span>
-            </div>
+            <AnimatePresence exitBeforeEnter>
+                <motion.div
+                    key={quote.quote}
+                    transition={{ duration: 0.5 }}
+                    initial="pageInitial"
+                    animate="pageAnimate"
+                    exit="pageExit"
+                    variants={animations}
+                >
+                    <div className={styles.QuoteContent}>
+                        <span className={styles.QuoteMark}>"</span>
+                        <p id="text">{quote.quote}</p>
+                        <span className={styles.QuoteMark}>"</span>
+                    </div>
+                    <div className={styles.QuoteAuthor}>
+                        <span id="author" className={styles.QuoteAuthorName}>
+                            {quote.author}
+                        </span>
+                    </div>
+                </motion.div>
+            </AnimatePresence>
+
             <div className={styles.QuoteButtons}>
                 <Button id="tweet-quote" type="share">
                     <TwitterIcon />

@@ -1,0 +1,16 @@
+@import "../globals";
+
+.Footer {
+    margin-top: 1rem;
+    color: $mid;
+
+    a {
+        color: $light;
+        font-weight: 600;
+        transition: $transNormal;
+    }
+
+    a:hover {
+        color: $mid;
+    }
+}

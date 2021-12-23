@@ -1,0 +1,38 @@
+@import "../../globals";
+
+.Loader {
+    display: flex;
+    column-gap: 0.5rem;
+    padding: 2rem;
+}
+
+.One,
+.Two,
+.Three {
+    display: block;
+    background-color: $offDark;
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    animation: loading 1.5s infinite;
+}
+
+.Two {
+    animation-delay: 0.1s;
+}
+
+.Three {
+    animation-delay: 0.2s;
+}
+
+@keyframes loading {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

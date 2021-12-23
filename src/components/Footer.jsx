@@ -1,7 +1,14 @@
 import React from "react";
+import styles from "../styles/components/Footer.module.scss";
 
 const Footer = () => {
-    return <div></div>;
+    return (
+        <footer className={styles.Footer}>
+            <div>
+                by <a href="https://github.com/makucode">makucode</a>
+            </div>
+        </footer>
+    );
 };
 
 export default Footer;

@@ -40,10 +40,17 @@
     margin-bottom: 2rem;
     color: $offDark;
     font-style: italic;
+    text-align: center;
 }
 
 .QuoteButtons {
     display: flex;
     justify-content: space-between;
     width: 100%;
+}
+
+@media only screen and (max-width: $s) {
+    .Quote {
+        width: 95vw;
+    }
 }
