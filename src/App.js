@@ -1,6 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Footer from "./components/Footer";
-import Header from "./components/Header";
 import Quote from "./components/Quote";
 import { QuoteProvider } from "./contexts/QuoteContext";
 import styles from "./styles/pages/App.module.scss";
@@ -19,7 +18,6 @@ function App() {
                     variants={animations}
                 >
                     <div className={styles.App}>
-                        <Header />
                         <Quote />
                         <Footer />
                     </div>
